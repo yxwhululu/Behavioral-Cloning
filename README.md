@@ -42,7 +42,7 @@ With the normalization, on the one hand, the neuron output saturation caused by 
 
 My model architecture is as below.
 
-Layer	                                Output Shape
+Layer                                  Output Shape
 
 Two 3×3 ×16 convolution layer	First	43X159X16
 
