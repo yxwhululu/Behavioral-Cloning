@@ -42,33 +42,62 @@ With the normalization, on the one hand, the neuron output saturation caused by 
 
 My model architecture is as below.
 
-Layer	Output Shape
+Layer	                                Output Shape
+
 Two 3×3 ×16 convolution layer	First	43X159X16
-	Second	42X157X16
-BatchNormalization layer	42X157X16
+
+	                        Second	42X157X16
+				
+BatchNormalization layer	        42X157X16
+
 2×2 strides Maxpooling layer(dropout)	21X79X16
+
 Two 3×3×32 convolution layer	First	19X77X32
-	Second	17X75X32
-BatchNormalization layer	17X75X32
+
+	                        Second	17X75X32
+				
+BatchNormalization layer	        17X75X32
+
 2×2 strides Maxpooling layer(dropout)	9X38X32
+
 Two 3×3×32 convolution layer	First	7X36X32
-	Second	5X34X32
-BatchNormalization layer	5X34X32
+
+	                        Second	5X34X32
+				
+BatchNormalization layer	        5X34X32
+
 2×2 strides Maxpooling layer(dropout)	3X17X32
-Flatten layer	1632
-Fully connected 1024 (dropout)	1024
-Fully connected 512(dropout)	512
-Fully connected 100(dropout)	100
-Fully connected 1	1
+
+Flatten layer	                        1632
+
+Fully connected 1024 (dropout)	        1024
+
+Fully connected 512(dropout)	        512
+
+Fully connected 100(dropout)	        100
+
+Fully connected 1	                1
+
 The convolution layers were employed firstly for feature extraction。
+
 Batch normalization layers was added to accelerate training and to reduce the influence of the covariate shift, the model will get more strong and robust。
+
 Dropout layers have also been applied to each hidden layers to avoid overfitting.
+
 At last the fully connected layers are used for regression.
+
 4.	Training the model
+
 The 20% of the samples were split for validation set.
+
 The generator  was used to save memory space. The train generator and valid generator batch size were set to 32.
+
 The adam optimization algorithm was used to train the model with 8 epochs.
+
  The mean squared error was selected as the metric of the model. And finally, the training mean squared error and the validation mean squared error is less than 0.016.
+ 
 My model is trained as “mymodel.h5”.
+
 5.	Testing the model
+
 With the drive.py, my model is used to drive the car autonomously in the simulator and the effect is OK and the video “run1.mp4” show the result.
