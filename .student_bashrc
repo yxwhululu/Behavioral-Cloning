@@ -1,0 +1,9 @@
+export PATH=/opt/miniconda3/bin:/usr/local/cuda-9.0/bin:/opt/pytorch/bin:/opt/utils/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/VirtualGL/bin:/opt/TurboVNC/bin:/opt/swift/swift-4.0.3-RELEASE-ubuntu16.04/usr/bin
+export PYTHONPATH=/opt/carnd_p3/behavioral/venv/bin/python
+export LD_LIBRARY_PATH=/opt/carndcapstone/cuda-8.0/extras/CUPTI/lib64/:/opt/carndcapstone/cuda-8.0/lib64/
+export CUDA_HOME=/opt/carndcapstone/cuda-8.0
+ln -s /opt/carnd_p3/data CarND-Behavioral-Cloning-P3/data
+source activate /opt/carnd_p3/behavioral/
+pip install requests -q
+ln -sf /home/workspace/simulator.desktop /root/Desktop/simulator.desktop
+sh end_process.sh
